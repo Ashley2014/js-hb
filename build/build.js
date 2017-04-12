@@ -1,18 +1,18 @@
-require('shelljs/global'); // shell 命令 
 process.env.NODE_ENV = 'production'
 
 var path = require('path');
-var config = require('../config')
+
 var ora = require('ora'); // loading 样式
+
 var webpack = require('webpack');
+
 var webpackConfig = require('./webpack.prod.conf');
 
+
 var spinner = ora('生产环境打包中...'); // loading
+
 spinner.start();
 
-var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
-rm('-rf', assetsPath); // 移除打包目录
-mkdir('-p', assetsPath); // 创建打包目录
 
 webpack(webpackConfig, function(err, stats) {
     spinner.stop();

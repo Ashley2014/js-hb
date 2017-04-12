@@ -1,4 +1,6 @@
 var path = require('path');
+
+console.log(process.env.NODE_ENV=='development')
 module.exports = {
     entry: {
         app: './src/app/entry.js', // 入口文件
@@ -34,7 +36,7 @@ module.exports = {
                         "loader": "css-loader",
                         "options": {
                             "minimize": true,
-                            "sourceMap": true,
+                            "sourceMap": process.env.NODE_ENV=='development'?true:false,
                             "modules":{
                                 importLoaders:1,
                                 localIdentName:"[local]___[hash:base64:5]",
@@ -47,7 +49,7 @@ module.exports = {
                     {
                         "loader": "sass-loader",
                         "options": {
-                            "sourceMap": true
+                            "sourceMap": process.env.NODE_ENV=='development'?true:false
                         }
                     }
                 ]
@@ -62,7 +64,7 @@ module.exports = {
                             ["env", {
                                 "modules": false,
                                 "loose": true
-                            }], "react"
+                            }]
                         ]
                     }
                 }],

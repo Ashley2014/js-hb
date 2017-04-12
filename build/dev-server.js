@@ -1,10 +1,10 @@
-
+process.env.NODE_ENV = 'development'
 var config = {
     port:8081,
     autoOpenBrowser:true,
     assetsSubDirectory: 'static', // 静态资源路径
     assetsPublicPath: '/', // cdn 路径
-    assetsFolder: 'assets', // 根目录下,资源文件夹名
+    assetsFolder: 'static', // 根目录下,资源文件夹名
 };
 
 

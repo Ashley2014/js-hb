@@ -2,7 +2,7 @@
  * Created by Administrator on 2016/8/25.
  */
 var haloBear={};
-import agent from "./hb.agent";
+import agent from "app/agent/hb.agent";
 haloBear.agent=agent;
 var weui=(function(){
     var _alert=function(options){

@@ -1,52 +1,22 @@
-//require("./style.scss");
-//var $$=require("../node_modules/jquery/dist/jquery.js");
-//var url2=require("./url.js");
-//import url2 from "./url.js";
-//import url2 from "../bower_components/js-url/url";
-//var XModule=require("exports?XModule!../bower_components/js-url/url.js");
-//var XModule=require("imports?window=>{}!exports?window.url!../bower_components/js-url/url.js");
-//var XModule=require("exports?window.url!../bower_components/js-url/url.js");
-//var XModule=require("exports?window.url!../bower_components/js-url/url.js");
-
-
-//var XModule=require("url");
-//window.url=null;
-
-
-//var aaa=require("imports?window=>{}!exports?window.url!../bower_components/js-url/url.js");
-//var aa=`dsfe
-//sdfe
-//ef`;
 
 
 //console.log(url)
-
-var hb={};
-hb.location={};
-hb.lib={};
-hb.color={};
-//hb.agent=require("./hb.agent");
-import agent from "./hb.agent";
-//console.log(require("exports?agent!./hb.agent"))
-hb.agent=agent;
-
-import browser from "./hb.browser";
-hb.browser=browser;
-
-// var url=require("exports?url!./url");
-var url=require("./url");
-hb.location.url=url;
-import myHash from "./hb.location.hash";
-hb.location.hash=myHash;
-
-//import * as weui from "./hb.lib.weui";
-import weui from "./hb.lib.weui";
-hb.lib.weui=weui;
-
-import iui from "./hb.lib.iui";
-hb.lib.iui=iui;
+import agent from "app/agent/hb.agent";
+import browser from "app/browser/hb.browser";
+import url from "app/url/url";
+import color from "./color/hb.color";
+import hash from "app/hash/hb.location.hash";
+import weui from "app/weui/hb.lib.weui";
+import iui from "app/iui/hb.lib.iui";
+import util from "app/util/hb.util";
+import hack from "app/hack/hb.hack";
+import validation from "app/validation/hb.validation";
+import interval from "app/interval/hb.interval";
 
 var Cookies=require("js-cookie");
+var store=require("store");
+
+
 Cookies.withConverter({
     write: function (value) {
         return encodeURIComponent(value);
@@ -56,25 +26,8 @@ Cookies.withConverter({
     }
 });
 
-hb.Cookies=Cookies;
-import color from "./hb.color";
-hb.color=color;
-
-import util from "./hb.util";
-hb.util=util;
-
-import hack from "./hb.hack";
-hb.hack=hack;
-
-import validation from "./hb.validation";
-hb.validation=validation;
-
-
-
-var store=require("store");
-hb.store=store;
 //storeWithExpiration
-hb.storeWithExpiration = {
+var storeWithExpiration = {
     set: function(key, val, options) {
         var options=options||{};
         var defaults={
@@ -96,17 +49,28 @@ hb.storeWithExpiration = {
     }
 };
 
-import interval from "./hb.interval";
-hb.interval=interval;
+
+
+var hb={
+    agent,
+    browser,
+    Cookies,
+    color,
+    util,
+    hack,
+    validation,
+    store,
+    storeWithExpiration,
+    interval,
+    location:{
+        url,
+        hash,
+    },
+    lib:{
+        weui,
+        iui,
+    }
+};
 
 
 window.hb=hb;
-
-
-//console.log(hb);
-
-
-
-
-
-

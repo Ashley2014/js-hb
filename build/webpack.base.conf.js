@@ -9,6 +9,9 @@ module.exports = {
         path: path.join(__dirname, '../', 'src'), // 资源路径
         filename: '[name].js', // 输出文件名
     },
+    node: {
+        Buffer: false
+    },
     externals: {
     },
     resolve: {
@@ -17,6 +20,7 @@ module.exports = {
         // [文件, 路径] 的简称
         alias: {
             'src': path.join(__dirname, '../', 'src'),
+            'app': path.join(__dirname, '../', 'src/app'),
         },
     },
     module: {

@@ -107,15 +107,15 @@ var iui=(function(){
         var settings = $.extend( {},defaults, options );
 
         var alertHtmlStr=`
-    <div id="iui-pop-alert" class="${styles['mui-popup']} " >
-    <div class="${styles['mui-popup-inner']}">
-    <div class="${styles['mui-popup-title']}">${settings.title}</div>
-    <div class="${styles['mui-popup-text']}">${settings.content}</div></div>
-    <div class="${styles['mui-popup-buttons']}">
-    <span class="${styles['mui-popup-button']} ${styles['mui-popup-button-bold']}">${settings.btn}</span>
-    </div>
-    </div>
-    <div class=" ${styles['mui-popup-backdrop']}  ${styles['mui-active']}" ></div>
+    <div id="iui-pop-alert" class="${styles['mui-popup']} " >\
+    <div class="${styles['mui-popup-inner']}">\
+    <div class="${styles['mui-popup-title']}">${settings.title}</div>\
+    <div class="${styles['mui-popup-text']}">${settings.content}</div></div>\
+    <div class="${styles['mui-popup-buttons']}">\
+    <span class="${styles['mui-popup-button']} ${styles['mui-popup-button-bold']}">${settings.btn}</span>\
+    </div>\
+    </div>\
+    <div class=" ${styles['mui-popup-backdrop']} ${styles['mui-active']}" ></div>\
         `;
         var $alertHtml=$(alertHtmlStr);
         $("body").append($alertHtml);

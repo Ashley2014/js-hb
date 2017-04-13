@@ -8,8 +8,6 @@ var baseWebpackConfig = require('./webpack.base.conf');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
-
-
 var webpackConfig = merge(baseWebpackConfig, {
     // 模块
     module: {
@@ -34,7 +32,11 @@ var webpackConfig = merge(baseWebpackConfig, {
             },
             sourceMap: false,
         }),
-
+        new webpack.BannerPlugin({
+            banner: `"js-cookie": "^2.1.4"\n"store": "^2.0.4"\n"spin.js": "^2.3.2"\n`,
+            raw: false,
+            entryOnly: true
+        }),
         // 插入 资源文件(含hash的名字) 到 index.html 
         new HtmlWebpackPlugin({
             filename: 'index.html',

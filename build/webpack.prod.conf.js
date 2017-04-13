@@ -33,7 +33,7 @@ var webpackConfig = merge(baseWebpackConfig, {
             sourceMap: false,
         }),
         new webpack.BannerPlugin({
-            banner: `"js-cookie": "^2.1.4"\n"store": "^2.0.4"\n"spin.js": "^2.3.2"\n`,
+            banner: `"js-cookie": "^2.1.4"\n"store": "^2.0.4"\n"spin.js": "^2.3.2"\n"js-url"："^2.4.1"`,
             raw: false,
             entryOnly: true
         }),

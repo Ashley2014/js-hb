@@ -2,9 +2,12 @@
  *
  * util
  */
+import loading from './loading'
 
-var util={};
-var Spinner=require("spin.js");
+var util={
+    loading,
+};
+
 /*
  *
  * 反序列化数据
@@ -82,12 +85,6 @@ var Spinner=require("spin.js");
             return parts.join(".");
         };
 
-        //if(n>9999){
-        //    //console.log(numberWithCommas(wanN),'万');
-        //
-        //
-        //    return numberWithCommas(wanN)+'万';
-        //}
 
         return numberWithCommas(n)
 
@@ -253,38 +250,6 @@ var Spinner=require("spin.js");
 
 
 
-/*
- hb.util.loading
- require spin.js
- */
-(function(window,document,undefined) {
-    "use strict";
 
-    var loading=(function(){
-        var loadingHtmlStr=`
-            <div style="position: fixed;z-index: 9999999;width: 100%;height: 100%;left: 0;top: 0;background: rgba(0,0,0,0.2);"></div>
-            `;
-        var $loadingHtml=$(loadingHtmlStr);
-
-        var target = $loadingHtml.get()[0];
-        var spinner = new Spinner().spin(target);
-
-        //console.log(spinner);
-
-        var show=function(){
-            //console.log('er',$loadingHtml,$("body"))
-            $("body").append($loadingHtml);
-        };
-        var hide=function(){
-            $loadingHtml.remove();
-        };
-
-        return{
-            show:show,
-            hide:hide
-        }
-    }());
-    util.loading=loading;
-})(window, document);
 
 export default util;

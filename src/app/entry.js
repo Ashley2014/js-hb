@@ -12,7 +12,6 @@ import validation from "app/validation/hb.validation";
 import interval from "app/interval/hb.interval";
 
 
-// var url = require('wurl');
 var Cookies=require("js-cookie");
 var store=require("store");
 var Spinner=require("spin.js");

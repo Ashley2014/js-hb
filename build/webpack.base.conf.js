@@ -74,6 +74,15 @@ module.exports = {
                 }],
             },
             {
+                test: /\.html$/,
+                use: [ {
+                    loader: 'html-loader',
+                    options: {
+                        minimize: true
+                    }
+                }],
+            },
+            {
                 test: /\.(png|jpg|jpeg|webp|gif)$/,
                 use: [{
                     // loader: 'file-loader',

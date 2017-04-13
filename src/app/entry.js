@@ -1,7 +1,7 @@
 
 import agent from "app/agent/hb.agent";
 import browser from "app/browser/hb.browser";
-// import url from "app/url/url";
+import url from "app/url/url";
 import color from "./color/hb.color";
 import hash from "app/hash/hb.location.hash";
 import weui from "app/weui/hb.lib.weui";
@@ -12,7 +12,7 @@ import validation from "app/validation/hb.validation";
 import interval from "app/interval/hb.interval";
 
 
-var url = require('wurl');
+// var url = require('wurl');
 var Cookies=require("js-cookie");
 var store=require("store");
 var Spinner=require("spin.js");

@@ -47,6 +47,8 @@ var hide = function () {
   if (!target.parentNode) {
     return
   }
+
+
   target.parentNode.removeChild(target)
 };
 

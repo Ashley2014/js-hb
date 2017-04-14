@@ -1,4 +1,10 @@
-//2.4.1,去掉兼容jq和window
+/*
+* 2.4.1,去掉兼容jq和window
+*
+* https://github.com/websanova/js-url
+*
+*
+*/
 
 // (function() {
     var url = (function() {
